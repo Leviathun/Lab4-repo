@@ -1,0 +1,47 @@
+name: Feature
+description: File a bug report
+title: "Feature: "
+labels: []
+projects: ["octo-org/1", "octo-org/44"]
+assignees:
+  - octocat
+body:
+  - type: input
+    id: contact
+    attributes:
+      label: Contact Details
+      description: What is your name?
+      placeholder: ex. email@example.com
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+  - type: dropdown
+    id: request
+    attributes:
+      label: Type of request?
+      description: Select the type of your request
+      options:
+        - New Feature
+        - Remove Feature
+      default: 0
+    validations:
+      required: false
+  - type: dropdown
+    id: suggest
+    attributes:
+      label: What is the OS which you want to suggest?
+      multiple: true
+      options:
+        - MacOS
+        - Windows
+        - Linux
+        - Ubuntu
+  - type: textarea
+    id: detail
+    attributes:
+      label: What are the details of your suggestion?
+      description: Explain what do you want.
+      render: shell
